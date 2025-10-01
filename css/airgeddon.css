@@ -1,0 +1,41 @@
+/* Airgeddon Attack Menu Options Styling */
+/* Simple color for all attack menu options with light/dark mode support */
+
+.attack-menu .list-group-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.attack-menu .list-group-item:hover {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .attack-menu .list-group-item {
+        background-color: #343a40;
+        border-color: #495057;
+        color: #adb5bd;
+    }
+
+    .attack-menu .list-group-item:hover {
+        background-color: #495057;
+        color: #f8f9fa;
+    }
+}
+
+/* Bootstrap dark mode class support */
+[data-bs-theme="dark"] .attack-menu .list-group-item {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .attack-menu .list-group-item:hover {
+    background-color: #495057;
+    color: #f8f9fa;
+}

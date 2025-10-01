@@ -1,0 +1,211 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#modules" data-module="modules">Modules</a></li>
+                    <li class="breadcrumb-item active">Airgeddon</li>
+                </ol>
+            </nav>
+            <h1 class="module-title">Airgeddon</h1>
+            <p class="module-description">Multi-use bash script for Linux systems to audit wireless networks.</p>
+        </div>
+    </div>
+
+    <!-- Section 1: Preparation -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="bi bi-gear"></i> Section 1: Preparation</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="interface-select">Select Interface</label>
+                            <select class="form-select" id="interface-select">
+                                <option value="">Choose interface...</option>
+                                <!-- Interfaces populated from mock data -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="mode-select">Select Mode</label>
+                            <select class="form-select" id="mode-select">
+                                <option value="">Choose mode...</option>
+                                <!-- Modes populated from mock data -->
+                            </select>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-end">
+                            <button class="btn btn-primary" id="save-preparation">
+                                <i class="bi bi-check"></i> Save & Continue to Target Discovery
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Network Discovery -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="bi bi-search"></i> Section 2: Network Discovery</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="networks-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="select-all"></th>
+                                    <th>#</th>
+                                    <th>BSSID</th>
+                                    <th>ESSID</th>
+                                    <th>Channel</th>
+                                    <th>Signal</th>
+                                    <th>Encryption</th>
+                                    <th>WPS</th>
+                                    <th>Clients</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Networks populated from mock data -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label for="target-input">Enter target network item number:</label>
+                            <input type="number" class="form-control" id="target-input" placeholder="e.g., 1">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button class="btn btn-success" id="save-targets">
+                                <i class="bi bi-check"></i> Save Selected Targets & Continue to Attack Methods
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Attack Selection -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="bi bi-shield-exclamation"></i> Section 3: Attack Selection</h5>
+                </div>
+                <div class="card-body">
+                    <!-- DOS Attacks Menu -->
+                    <div class="attack-menu mb-3">
+                        <button class="btn btn-attack _btn-outline-danger w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#dos-menu" aria-expanded="false">
+                            <i class="bi bi-broadcast"></i> 5. DOS Attacks Menu
+                        </button>
+                        <div class="collapse" id="dos-menu">
+                            <div class="card card-body mt-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">5.1. Deauth Attack</li>
+                                    <li class="list-group-item">5.2. Beacon Flood Attack</li>
+                                    <li class="list-group-item">5.3. Auth DOS Attack</li>
+                                    <li class="list-group-item">5.4. Return to Main Menu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Handshake Tools Menu -->
+                    <div class="attack-menu mb-3">
+                        <button class="btn btn-attack _btn-outline-warning w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#handshake-menu" aria-expanded="false">
+                            <i class="bi bi-handshake"></i> 6. Handshake Tools Menu
+                        </button>
+                        <div class="collapse" id="handshake-menu">
+                            <div class="card card-body mt-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">6.1. Capture Handshake</li>
+                                    <li class="list-group-item">6.2. Clean/Optimize Handshake</li>
+                                    <li class="list-group-item">6.3. Verify Handshake</li>
+                                    <li class="list-group-item">6.4. Return to Main Menu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Offline WPA/WPA2 Decrypt Menu -->
+                    <div class="attack-menu mb-3">
+                        <button class="btn btn-attack _btn-outline-info w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#wpa-menu" aria-expanded="false">
+                            <i class="bi bi-lock"></i> 7. Offline WPA/WPA2 Decrypt Menu
+                        </button>
+                        <div class="collapse" id="wpa-menu">
+                            <div class="card card-body mt-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">7.1. Dictionary Attack</li>
+                                    <li class="list-group-item">7.2. Bruteforce Attack</li>
+                                    <li class="list-group-item">7.3. Return to Main Menu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WPS Attacks Menu -->
+                    <div class="attack-menu mb-3">
+                        <button class="btn btn-attack _btn-outline-primary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#wps-menu" aria-expanded="false">
+                            <i class="bi bi-wifi"></i> 8. WPS Attacks Menu
+                        </button>
+                        <div class="collapse" id="wps-menu">
+                            <div class="card card-body mt-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">8.1. WPS PIN Attack</li>
+                                    <li class="list-group-item">8.2. WPS Pixie Dust Attack</li>
+                                    <li class="list-group-item">8.3. Return to Main Menu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evil Twin Attacks Menu -->
+                    <div class="attack-menu mb-3">
+                        <button class="btn btn-attack _btn-outline-dark w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#evil-twin-menu" aria-expanded="false">
+                            <i class="bi bi-diagram-3"></i> 9. Evil Twin Attacks Menu
+                        </button>
+                        <div class="collapse" id="evil-twin-menu">
+                            <div class="card card-body mt-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">9.1. Evil Twin AP Attack with captive portal</li>
+                                    <li class="list-group-item">9.2. Evil Twin AP Attack with sniffing</li>
+                                    <li class="list-group-item">9.3. Evil Twin AP Attack with sniffing and sslstrip</li>
+                                    <li class="list-group-item">9.4. Return to Main Menu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WEP Attacks Menu -->
+                    <div class="attack-menu mb-3">
+                        <button class="btn btn-attack _btn-outline-secondary w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#wep-menu" aria-expanded="false">
+                            <i class="bi bi-shield-x"></i> 10. WEP Attacks Menu
+                        </button>
+                        <div class="collapse" id="wep-menu">
+                            <div class="card card-body mt-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">10.1. WEP Fake Auth Attack</li>
+                                    <li class="list-group-item">10.2. WEP Chop-Chop Attack</li>
+                                    <li class="list-group-item">10.3. WEP Fragmentation Attack</li>
+                                    <li class="list-group-item">10.4. Return to Main Menu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exit -->
+                    <div class="text-center">
+                        <button class="btn btn-attack _btn-danger btn-lg" id="exit-airgeddon">
+                            <i class="bi bi-x-circle"></i> 11. Exit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

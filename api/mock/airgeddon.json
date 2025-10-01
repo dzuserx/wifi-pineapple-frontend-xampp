@@ -1,0 +1,202 @@
+{
+    "interfaces": {
+        "available": [
+            {
+                "id": 1,
+                "name": "wlan0",
+                "driver": "rtl8812au",
+                "chipset": "Realtek RTL8812AU",
+                "capabilities": ["Monitor Mode", "Packet Injection", "5GHz"],
+                "status": "active",
+                "mac_address": "00:11:22:33:44:55"
+            },
+            {
+                "id": 2,
+                "name": "wlan1",
+                "driver": "mt7601u",
+                "chipset": "MediaTek MT7601U",
+                "capabilities": ["Monitor Mode"],
+                "status": "inactive",
+                "mac_address": "AA:BB:CC:DD:EE:FF"
+            }
+        ],
+        "modes": ["Monitor", "Managed", "Access Point"]
+    },
+    "networks": {
+        "discovered": [
+            {
+                "id": 1,
+                "bssid": "00:11:22:33:44:55",
+                "essid": "HomeNetwork",
+                "channel": 6,
+                "signal_strength": -65,
+                "encryption": "WPA2",
+                "wps_enabled": true,
+                "client_count": 3,
+                "last_seen": "2023-12-25T10:30:00Z",
+                "vendor": "Netgear"
+            },
+            {
+                "id": 2,
+                "bssid": "AA:BB:CC:DD:EE:FF",
+                "essid": "Office_WiFi",
+                "channel": 11,
+                "signal_strength": -72,
+                "encryption": "WPA2",
+                "wps_enabled": false,
+                "client_count": 0,
+                "last_seen": "2023-12-25T10:30:00Z",
+                "vendor": "Cisco"
+            }
+        ]
+    },
+    "attack_methods": {
+        "dos": {
+            "name": "DOS Attacks",
+            "id": 5,
+            "attacks": [
+                {
+                    "id": "5.1",
+                    "name": "Deauth Attack",
+                    "description": "Deauthentication attack against wireless clients"
+                },
+                {
+                    "id": "5.2",
+                    "name": "Beacon Flood Attack",
+                    "description": "Flood area with fake access points"
+                },
+                {
+                    "id": "5.3",
+                    "name": "Auth DOS Attack",
+                    "description": "Authentication denial of service attack"
+                }
+            ]
+        },
+        "handshake": {
+            "name": "Handshake Tools",
+            "id": 6,
+            "attacks": [
+                {
+                    "id": "6.1",
+                    "name": "Capture WPA Handshake",
+                    "description": "Capture WPA/WPA2 handshake from clients"
+                },
+                {
+                    "id": "6.2",
+                    "name": "Clean/Optimize Handshake",
+                    "description": "Clean and optimize captured handshakes"
+                },
+                {
+                    "id": "6.3",
+                    "name": "Verify Handshake",
+                    "description": "Verify captured handshake validity"
+                }
+            ]
+        },
+        "wpa_decrypt": {
+            "name": "Offline WPA/WPA2 decrypt",
+            "id": 7,
+            "attacks": [
+                {
+                    "id": "7.1",
+                    "name": "Dictionary Attack",
+                    "description": "Offline dictionary attack against captured handshake"
+                },
+                {
+                    "id": "7.2",
+                    "name": "Bruteforce Attack",
+                    "description": "Offline bruteforce attack against captured handshake"
+                }
+            ]
+        },
+        "wps": {
+            "name": "WPS Attacks",
+            "id": 8,
+            "attacks": [
+                {
+                    "id": "8.1",
+                    "name": "WPS PIN Attack",
+                    "description": "Attack WPS using PIN method"
+                },
+                {
+                    "id": "8.2",
+                    "name": "WPS Pixie Dust Attack",
+                    "description": "Pixie dust attack against WPS"
+                }
+            ]
+        },
+        "evil_twin": {
+            "name": "Evil Twin Attacks",
+            "id": 9,
+            "attacks": [
+                {
+                    "id": "9.1",
+                    "name": "Evil Twin AP Attack",
+                    "description": "Basic evil twin access point attack"
+                },
+                {
+                    "id": "9.2",
+                    "name": "Evil Twin AP Attack with sniffing",
+                    "description": "Evil twin with network traffic sniffing"
+                },
+                {
+                    "id": "9.3",
+                    "name": "Evil Twin AP Attack with sniffing and sslstrip",
+                    "description": "Evil twin with SSL stripping capabilities"
+                }
+            ]
+        },
+        "wep": {
+            "name": "WEP Attacks",
+            "id": 10,
+            "attacks": [
+                {
+                    "id": "10.1",
+                    "name": "WEP Fake Auth Attack",
+                    "description": "Fake authentication attack against WEP"
+                },
+                {
+                    "id": "10.2",
+                    "name": "WEP Chop-Chop Attack",
+                    "description": "Chop-chop attack against WEP encryption"
+                },
+                {
+                    "id": "10.3",
+                    "name": "WEP Fragmentation Attack",
+                    "description": "Fragmentation attack against WEP"
+                }
+            ]
+        }
+    },
+    "configuration": {
+        "languages": [
+            {"code": "en", "name": "English", "default": true},
+            {"code": "es", "name": "Spanish"},
+            {"code": "fr", "name": "French"}
+        ],
+        "interface_preferences": {
+            "default_interface": "wlan0",
+            "monitor_mode_settings": {
+                "auto_enable": true,
+                "preferred_driver": "rtl8812au"
+            },
+            "power_settings": {
+                "tx_power": "20dBm",
+                "power_save": false
+            },
+            "channel_settings": {
+                "default_channel": "auto",
+                "preferred_channels": [1, 6, 11]
+            }
+        }
+    },
+    "logging": {
+        "enabled": true,
+        "log_level": "info",
+        "log_rotation": {
+            "max_size": "10MB",
+            "keep_days": 30
+        },
+        "export_formats": ["txt", "csv", "html", "json"]
+    }
+}

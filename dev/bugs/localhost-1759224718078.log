@@ -1,0 +1,24 @@
+api.js:408 🌐 API service loaded successfully
+helpers.js:300 🔧 Helpers loaded successfully
+pineapple.js:515 🌐 WiFi Pineapple Frontend Loaded
+pineapple.js:13 🚀 WiFi Pineapple UI Initializing...
+pineapple.js:21 ✅ WiFi Pineapple UI Ready
+pineapple.js:332  HEAD http://localhost:8000/js/modules/modules/submodules/airgeddon.js 404 (File not found)
+loadModuleScript @ pineapple.js:332
+loadModule @ pineapple.js:190
+await in loadModule
+loadInitialModule @ pineapple.js:436
+init @ pineapple.js:18
+(anonymous) @ pineapple.js:474
+e @ jquery.min.js:2
+(anonymous) @ jquery.min.js:2
+setTimeout
+(anonymous) @ jquery.min.js:2
+c @ jquery.min.js:2
+fireWith @ jquery.min.js:2
+fire @ jquery.min.js:2
+c @ jquery.min.js:2
+fireWith @ jquery.min.js:2
+ready @ jquery.min.js:2
+B @ jquery.min.js:2
+pineapple.js:197 ✅ Loaded module: modules/airgeddon
