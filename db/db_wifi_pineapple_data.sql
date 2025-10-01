@@ -1,15 +1,15 @@
 -- Mock data for db_wifi_pineapple database
 
--- Insert into clients
-INSERT INTO clients (mac, vendor, packets, signal, connected_ssid) VALUES
-('AA:BB:CC:11:22:33', 'Apple Inc.', 245, -55, 'HomeWiFi'),
-('BB:CC:DD:22:33:44', 'Samsung Electronics', 189, -48, 'Office_Network');
-
 -- Insert into networks
-INSERT INTO networks (ssid, bssid, channel, signal, encryption, client_count) VALUES
+INSERT INTO networks (ssid, bssid, channel, `signal`, encryption, client_count) VALUES
 ('HomeWiFi', '00:11:22:33:44:55', 6, -45, 'WPA2', 3),
 ('Office_Network', 'AA:BB:CC:DD:EE:FF', 11, -62, 'WPA2', 8),
 ('GuestWiFi', '11:22:33:44:55:66', 1, -78, 'Open', 12);
+
+-- Insert into clients
+INSERT INTO clients (mac, vendor, packets, `signal`, connected_ssid) VALUES
+('AA:BB:CC:11:22:33', 'Apple Inc.', 245, -55, 'HomeWiFi'),
+('BB:CC:DD:22:33:44', 'Samsung Electronics', 189, -48, 'Office_Network');
 
 -- Insert into interfaces
 INSERT INTO interfaces (name, status, ip, mac, mode) VALUES
@@ -35,15 +35,15 @@ INSERT INTO ssid_pool (name, count, added) VALUES
 
 -- Insert into pineapple_settings
 INSERT INTO pineapple_settings (enabled, pool_size, beacon_interval, response_interval, broadcast_ssid, log_associations, karma_mode) VALUES
-(true, 50, 100, 1000, true, true, 'standard');
+(1, 50, 100, 1000, 1, 1, 'standard');
 
 -- Insert into modules
 INSERT INTO modules (name, version, description, enabled, author, size, type) VALUES
-('URL Sniffer', '1.2.0', 'Captures and analyzes HTTP/HTTPS traffic', true, 'Hak5', 2457600, 'installed'),
-('DNS Spoof', '2.1.0', 'DNS spoofing and redirection module', true, 'Hak5', 1835008, 'installed'),
-('Evil Portal', '3.0.1', 'Captive portal and phishing module', false, 'Hak5', 4194304, 'installed'),
-('Network Scanner', '1.0.0', 'Advanced network discovery and mapping', false, 'Community', 1048576, 'available'),
-('Packet Analyzer', '2.3.0', 'Deep packet inspection and analysis', false, 'Hak5', 5242880, 'available');
+('URL Sniffer', '1.2.0', 'Captures and analyzes HTTP/HTTPS traffic', 1, 'Hak5', 2457600, 'installed'),
+('DNS Spoof', '2.1.0', 'DNS spoofing and redirection module', 1, 'Hak5', 1835008, 'installed'),
+('Evil Portal', '3.0.1', 'Captive portal and phishing module', 0, 'Hak5', 4194304, 'installed'),
+('Network Scanner', '1.0.0', 'Advanced network discovery and mapping', 0, 'Community', 1048576, 'available'),
+('Packet Analyzer', '2.3.0', 'Deep packet inspection and analysis', 0, 'Hak5', 5242880, 'available');
 
 -- Insert into campaign_modes
 INSERT INTO campaign_modes (id, name, description) VALUES

@@ -145,6 +145,21 @@ wifi-pineapple-frontend/
 
 3. Open http://localhost:8000 in your browser
 
+4. Linux
+    Start XAMPP?
+    sudo /opt/lampp/lampp start
+
+    Using GUI:
+    cd /opt/lampp
+    sudo ./manager-linux.run (or manager-linux-x64.run)
+			  
+    Stop XAMPP?
+    sudo /opt/lampp/lampp stop
+
+    Using GUI:
+    cd /opt/lampp
+    sudo ./manager-linux.run (or manager-linux-x64.run)
+
 ## Config
 
 1. GIT
