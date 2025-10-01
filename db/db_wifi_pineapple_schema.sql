@@ -1,4 +1,4 @@
--- Database: db_wifi_pineapple
+-- Database: db_wifi_pineapple ---
 
 -- Table: clients
 CREATE TABLE clients (
